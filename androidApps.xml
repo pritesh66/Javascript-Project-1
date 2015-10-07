@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Catalog>
+    <apps>
+        <Name>WhatsApp</Name>
+        <Description>WhatsApp Messenger is a messaging app available for Android and other smartphones.
+              WhatsApp uses your phone’s Internet connection (4G/3G/2G/EDGE or Wi-Fi, as available) to
+              message and call friends and family. </Description>
+        <Downloads>5,000,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/z3y1zkuoyew</Video>
+        <Ratings>4.4/5</Ratings>
+        <Version>2.12.250</Version>
+        <Image>whatsapp.jpg</Image>
+        <Require>android 2.1 up</Require>
+
+    </apps>
+    <apps>
+        <Name>Viber</Name>
+        <Description>With Viber, everyone in the world can connect. Freely.
+            More than 606 million Viber users text, make HD-quality phone and video calls,
+            and send photo and video messages worldwide over Wifi or 3G - for free.</Description>
+        <Downloads>5,000,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/LQXKwuwLQ14</Video>
+        <Image>viber.jpg</Image>
+        <Ratings>4.3/5</Ratings>
+        <Require>android 2.3 and up</Require>
+        <Version>5.5.2.28</Version>
+    </apps>
+    <apps>
+        <Name>Hike</Name>
+        <Description>An awesome hike privacy feature which allows you to hide all the
+            chats that you want to keep private from the world and access them only
+            with a password! Your private conversations are now protected and secure
+            from anyone who takes your phone.</Description>
+        <Downloads>4,000,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/VX5m4fdrhF8</Video>
+        <Image>hike.jpg</Image>
+        <Ratings>4.3/5</Ratings>
+        <Require>android 2.3 and up</Require>
+        <Version>varies with device</Version>
+    </apps>
+    <apps>
+        <Name>BBM</Name>
+        <Description>BBM brings you together in the moment with friends and family through
+            instant chats, voice calls, picture sharing, voice notes and more. Download
+            the official version of BBM from BlackBerry now.</Description>
+        <Downloads>3,000,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/3_VkiJsL9L4</Video>
+        <Image>bbm.jpg</Image>
+        <Ratings>4.3/5</Ratings>
+        <Require>Varies with device</Require>
+        <Version>varies with device</Version>
+    </apps>
+    <apps>
+        <Name>Facebook</Name>
+        <Description>Keeping up with friends is faster than ever.
+            • See what friends are up to
+            • Share updates, photos and videos
+            • Get notified when friends like and comment on your posts
+            • Play games and use your favorite apps</Description>
+        <Downloads>5,000,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/wN957AnZHCY</Video>
+        <Image>facebook.jpg</Image>
+        <Ratings>4.0/5</Ratings>
+        <Require>Varies with device</Require>
+        <Version>varies with device</Version>
+    </apps>
+    <apps>
+        <Name>Instagram</Name>
+        <Description>Instagram is a simple way to capture and share the world's moments.
+            Transform your everyday photos and videos into works of art and share them with
+            your family and friends.</Description>
+        <Downloads>8,000,000,000</Downloads>https://www.youtube.com/embed/s13rYoeex8o
+        <Video>https://www.youtube.com/embed/s13rYoeex8o</Video>
+        <Image>instagram.jpg</Image>
+        <Ratings>4.5/5</Ratings>
+        <Require>Varies with device</Require>
+        <Version>varies with device</Version>
+    </apps>
+    <apps>
+        <Name>Linkedin</Name>
+        <Description>With the LinkedIn Android app, opportunity is just a tap away.
+            Build and nurture your professional network, stay up to date with the latest
+            business and industry news, and find your next dream job.</Description>
+        <Downloads>50,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/DhXWU6miD_M</Video>
+        <Image>linkedin.jpg</Image>
+        <Ratings>4.2/5</Ratings>
+        <Require>2.3 and up</Require>
+        <Version>varies with device</Version>
+    </apps>
+    <apps>
+        <Name>Snapchat</Name>
+        <Description>Enjoy fast and fun mobile conversation! Snap a photo or a video, add
+            a caption, and send it to a friend. They’ll view it, laugh, and then the Snap disappears
+            from the screen – unless they take a screenshot!</Description>
+        <Downloads>500,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/vssuMF9HZT8</Video>
+        <Image>snapchat.jpg</Image>
+        <Ratings>4.2/5</Ratings>
+        <Require>4.0 and up</Require>
+        <Version>9.15.1.0</Version>
+    </apps>
+    <apps>
+        <Name>Line</Name>
+        <Description>LINE reshapes communication around the globe, bringing you closer to your family,
+            friends, and loved ones—for free. With voice and video calls, messages, and a limitless variety
+            of exciting stickers, you’ll be able to express yourselfin ways that you’ve never thought possible.</Description>
+        <Downloads>100,000,000 - 500,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/BHiEDpJ6mUo</Video>
+        <Image>line.jpg</Image>
+        <Ratings>4.2/5</Ratings>
+        <Require>Varies with device</Require>
+        <Version>Varies with device</Version>
+    </apps>
+    <apps>
+        <Name>Hangouts</Name>
+        <Description>Use Hangouts to keep in touch. Message friends, start free video or voice calls,
+            and hop on a conversationwith one person or a group.</Description>
+        <Downloads>5,000,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/xC-G_rqGeCU</Video>
+        <Image>hangouts.jpg</Image>
+        <Ratings>3.9/5</Ratings>
+        <Require>Varies with device</Require>
+        <Version>Varies with device</Version>
+    </apps>
+    <apps>
+        <Name>Skype</Name>
+        <Description>Say “hello” to friends and family with an instant message, voice or video call
+            on Skype for free. </Description>
+        <Downloads>500,000,000 - 1,000,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/O3Ncw3tnUvo</Video>
+        <Image>skype.jpg</Image>
+        <Ratings>4.1/5</Ratings>
+        <Require>Varies with device</Require>
+        <Version>Varies with device</Version>
+    </apps>
+    <apps>
+        <Name>Beats</Name>
+        <Description>Beats Music is an innovative streaming service that combines the top
+            tier music experts with premium technology to always deliver the right music at
+            the right time. </Description>
+        <Downloads>10,000,000 - 50,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/KEjkFVX-8Gk</Video>
+        <Image>beats.jpg</Image>
+        <Ratings>4.3/5</Ratings>
+        <Require>4.0 and up</Require>
+        <Version>1.2.6</Version>
+    </apps>
+    <apps>
+        <Name>Saavn</Name>
+        <Description>Saavn is unlimited, free access to all your Bollywood,
+            English, Hindi, and Indian regional songs, music, and radio
+            stations – wherever you go. </Description>
+        <Downloads>10,000,000 - 50,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/qIb24zYWjGg</Video>
+        <Image>saavn.jpg</Image>
+        <Ratings>4.1/5</Ratings>
+        <Require>Varies with device</Require>
+        <Version>Varies with device</Version>
+    </apps>
+    <apps>
+        <Name>Spotify</Name>
+        <Description>With Spotify, you have access to a world of music.
+            You can listen to artists and albums, or create your own playlist of
+            your favorite songs.</Description>
+        <Downloads>100,000,000 - 500,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/brXl_fEvado</Video>
+        <Image>spotify.jpg</Image>
+        <Ratings>4.5/5</Ratings>
+        <Require>Varies with device</Require>
+        <Version>Varies with device</Version>
+    </apps>
+    <apps>
+        <Name>iHeartRadio</Name>
+        <Description>iHeartRadio lets you access the world of music and radio in one simple app.
+            Download today to listen to top radio stations, music, news, podcasts, sports,
+            talk, and comedy shows.</Description>
+        <Downloads>10,000,000 - 50,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/e18vqNE1SDA</Video>
+        <Image>iHeart.jpg</Image>
+        <Ratings>4.6/5</Ratings>
+        <Require>Varies with device</Require>
+        <Version>Varies with device</Version>
+    </apps>
+    <apps>
+        <Name>Pandora</Name>
+        <Description>Great music discovery is effortless and free with Pandora. Just start with the name
+            of one of your favorite artists, songs, genres or composers and we'll do the rest. It's easy
+            to create personalized stations that play only music you'll love.</Description>
+        <Downloads>100,000,000 - 500,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/bGcqJR06OCM</Video>
+        <Image>pandora.jpg</Image>
+        <Ratings>4.4/5</Ratings>
+        <Require>Varies with device</Require>
+        <Version>Varies with device</Version>
+    </apps>
+    <apps>
+        <Name>TuneIn</Name>
+        <Description>Listen to your favorite radio stations for free with TuneIn Radio. With over 100,000
+            stations, TuneIn has the largest free selection of sports, news, music and talk radio from
+            around the world.</Description>
+        <Downloads>100,000,000 - 500,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/lLvyh3dEarA</Video>
+        <Image>tunein.jpg</Image>
+        <Ratings>4.5/5</Ratings>
+        <Require>Varies with device</Require>
+        <Version>Varies with device</Version>
+    </apps>
+    <apps>
+        <Name>Zedge</Name>
+        <Description>ZEDGE™ offers free wallpapers, ringtones and notification sounds to easily
+            customize your device. In addition we offer you personalized game recommendations.</Description>
+        <Downloads>100,000,000 - 500,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/gfIAJ2Lqqt8</Video>
+        <Image>zedge.jpg</Image>
+        <Ratings>4.5/5</Ratings>
+        <Require>Varies with device</Require>
+        <Version>Varies with device</Version>
+    </apps>
+    <apps>
+        <Name>Ringdroid</Name>
+        <Description>Ringdroid lets you create personal ringtones, alarms, and notification sounds
+            from existing music/audio files and record new ones using your Android device.</Description>
+        <Downloads>10,000,000 - 50,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/71-cKrzgOIo</Video>
+        <Image>ringdroid.jpg</Image>
+        <Ratings>4.4/5</Ratings>
+        <Require>Varies with device</Require>
+        <Version>Varies with device</Version>
+    </apps>
+    <apps>
+        <Name>Jetboom</Name>
+        <Description>Our galaxy is under attack by alien battle robot army. These space invaders
+            are threatening our space defence by war craft strike. You are the space wolf to save
+            the galaxy by destroying enemy flying battle robots and warships and bring back peace. </Description>
+        <Downloads>5,000 - 10,000</Downloads>
+        <Video>https://www.youtube.com/embed/KlfJS7u-O08</Video>
+        <Image>jetboom.jpg</Image>
+        <Ratings>4.7/5</Ratings>
+        <Require>2.3 and up</Require>`
+        <Version>1.2.4</Version>
+    </apps>
+    <apps>
+        <Name>Space Chicks</Name>
+        <Description>The simple fact is Space Chicks is an awesome endless runner.</Description>
+        <Downloads>50,000 - 100,000</Downloads>
+        <Video>https://www.youtube.com/embed/3RyQUwzW5mw</Video>
+        <Image>spaceChicks.jpg</Image>
+        <Ratings>4.0/5</Ratings>
+        <Require>2.3 and up</Require>
+        <Version>1.0.4</Version>
+    </apps>
+    <apps>
+        <Name>Space Defender</Name>
+        <Description>An invader's UFO attacked the earth.
+            You must repel the enemy attack.
+            Space defender is very simple but funny shooting game.</Description>
+        <Downloads>10,000 - 50,000</Downloads>
+        <Video>https://www.youtube.com/embed/LnqzcT1KZEE</Video>
+        <Image>spaceDefender.jpg</Image>
+        <Ratings>3.8/5</Ratings>
+        <Require>1.6 and up</Require>
+        <Version>2.3</Version>
+    </apps>
+    <apps>
+        <Name>Walking Dead</Name>
+        <Description>Are you ready to take over Woodbury and put an end to The Governor’s
+            tyranny? Battle between life and the undead in the definitive Walking Dead
+            role-playing game, where your decisions will determine who lives or dies.</Description>
+        <Downloads>1,000,000 - 5,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/pahRSGq4CCo</Video>
+        <Image>walkingDead.jpg</Image>
+        <Ratings>4.2/5</Ratings>
+        <Require>2.3.3 and up</Require>
+        <Version>Varies</Version>
+    </apps>
+    <apps>
+        <Name>Zombie Fire</Name>
+        <Description>A first-person shooting game with the topic of zombies!
+            This is a world full of zombies – the graveyard of human. </Description>
+        <Downloads>1,000,000 - 5,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/hyYpP2lE7co</Video>
+        <Image>zombieFire.jpg</Image>
+        <Ratings>3.8/5</Ratings>
+        <Require>2.3 and up</Require>
+        <Version>1.5</Version>
+    </apps>
+    <apps>
+        <Name>Cooking Fever</Name>
+        <Description>Cook delicious meals and desserts from all over the world in this FREE addictive
+            time-management game! With a choice of 11 unique locations, from Desserts and Fast Food
+            to Oyster Bar and Oriental Restaurant </Description>
+        <Downloads>10,000,000 - 50,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/HPQFQuuIVT4</Video>
+        <Image>cookingFever.jpg</Image>
+        <Ratings>4.4/5</Ratings>
+        <Require>2.3.3 and up</Require>
+        <Version>1.4.0</Version>
+    </apps>
+    <apps>
+        <Name>Cooking Master</Name>
+        <Description>Cooking Master is #1 deliciously fun game that lets you feed a host of hungry patrons
+            before they leave in a huff and become a star chef! </Description>
+        <Downloads>5,000,000 - 10,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/boziPjMHQsM</Video>
+        <Image>cookingMaster.jpg</Image>
+        <Ratings>4.0/5</Ratings>
+        <Require>2.0 and up</Require>
+        <Version>1.5</Version>
+    </apps>
+    <apps>
+        <Name>Fruit Ninja</Name>
+        <Description>Play Fruit Ninja like never before! We've rebuilt the legendary original slicing game
+            from the ground up, adding fresh new gameplay and characters for new and existing fans alike </Description>
+        <Downloads>100,000,000 - 500,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/_C_VK_LTUJE</Video>
+        <Image>fruitNinja.jpg</Image>
+        <Ratings>4.3/5</Ratings>
+        <Require>2.3.3 and up</Require>
+        <Version>2.3.2</Version>
+    </apps>
+    <apps>
+        <Name>Kung Fu Warrior</Name>
+        <Description>A BAND of THIEVES has KILLED YOUR MASTER! NOW... it's TIME for REVENGE!
+            GRAB POWER-UPS, MASTER COMBOS, and KICK-BUTT in this EPIC ACTION ADVENTURE! </Description>
+        <Downloads>1,000,000 - 5,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/sdCKUkuJ5UM</Video>
+        <Image>kungFuWarrior.jpg</Image>
+        <Ratings>4.2/5</Ratings>
+        <Require>2.2 and up</Require>
+        <Version>1.3</Version>
+    </apps>
+    <apps>
+        <Name>Mortal Kombat X</Name>
+        <Description>Experience the over-the-top, visceral fighting of MORTAL KOMBAT X!
+            Bring the power of next-gen gaming to your mobile and tablet device with this visually groundbreaking
+            fighting and card collection game.  </Description>
+        <Downloads>5,000,000 - 10,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/bZsrqCYr4HQ</Video>
+        <Image>mortalKombatX.jpg</Image>
+        <Ratings>4.4/5</Ratings>
+        <Require>4.0 and up</Require>
+        <Version>Varies with device</Version>
+    </apps>
+    <apps>
+        <Name>WWE Immortals</Name>
+        <Description>Play Fruit Ninja like never before! We've rebuilt the legendary original slicing game
+            from the ground up, adding fresh new gameplay and characters for new and existing fans alike </Description>
+        <Downloads>1,000,000 - 5,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/SZ981GPJv1E</Video>
+        <Image>wweImmortals.jpg</Image>
+        <Ratings>4.2/5</Ratings>
+        <Require>4.0 and up</Require>
+        <Version>Varies with device</Version>
+    </apps>
+    <apps>
+        <Name>Break the Bricks</Name>
+        <Description>Break the Bricks is the #1 smash bricks game available on Google Play and boasts more
+            features than every other arcade game. </Description>
+        <Downloads>10,000,000 - 50,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/5QDL6OAf7bU</Video>
+        <Image>breakTheBricks.jpg</Image>
+        <Ratings>4.0/5</Ratings>
+        <Require>Varies with device</Require>
+        <Version>Varies with device</Version>
+    </apps>
+    <apps>
+        <Name>Angry Birds</Name>
+        <Description>Use the unique powers of the Angry Birds to destroy the greedy pigs' defenses!  
+            The survival of the Angry Birds is at stake. Dish out revenge on the greedy pigs who stole their eggs.</Description>
+        <Downloads>100,000,000 - 500,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/LIrFq8xwNHI</Video>
+        <Image>angryBirds.jpg</Image>
+        <Ratings>4.4/5</Ratings>
+        <Require>2.3 and up</Require>
+        <Version>Varies with device</Version>
+    </apps>
+    <apps>
+        <Name>Solitaire</Name>
+        <Description>Solitaire by MobilityWare is the #1 Solitaire card game on the iPhone, and now it’s on Android!
+            If you like Windows Solitaire, you're going to love this app! This is the same Solitaire game AS SEEN ON TV,
+            and the only Solitaire app that includes Daily Challenges!</Description>
+        <Downloads>50,000,000 - 100,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/qIWMAWPuGBg</Video>
+        <Image>solitaire.jpg</Image>
+        <Ratings>4.3/5</Ratings>
+        <Require>2.2 and up</Require>
+        <Version>4.1.1</Version>
+    </apps>
+    <apps>
+        <Name>FreeCell</Name>
+        <Description> Play solitaire games that require skill, strategy and patience to win! A true brain
+            training experience!</Description>
+        <Downloads>5,000,000 - 10,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/iXmh91NmOGU</Video>
+        <Image>freeCell.jpg</Image>
+        <Ratings>4.4/5</Ratings>
+        <Require>2.2 and up</Require>
+        <Version>3.0.0</Version>
+    </apps>
+    <apps>
+        <Name>Bingo Pop</Name>
+        <Description>Use the unique powers of the Angry Birds to destroy the greedy pigs' defenses!  
+            The survival of the Angry Birds is at stake. Dish out revenge on the greedy pigs who stole their eggs.</Description>
+        <Downloads>5,000,000 - 10,000,000</Downloads>
+        <Video>https://www.youtube.com/embed/DedhVNfCVA0</Video>
+        <Image>bingoPop.jpg</Image>
+        <Ratings>4.0/5</Ratings>
+        <Require>4.0.3 and up</Require>
+        <Version>2.4.65</Version>
+    </apps>
+    <apps>
+        <Name>Skip Bo</Name>
+        <Description>Skip-Bo™, the popular family card game, officially licensed by Mattel™ is now in Google Play!
+            Test your skills, get into the action, and place all your cards in sequential order</Description>
+        <Downloads>100,000 - 500,000</Downloads>
+        <Video>https://www.youtube.com/embed/mJ949FWP1IQ</Video>
+        <Image>skipBo.jpg</Image>
+        <Ratings>4.5/5</Ratings>
+        <Require>Varies with device</Require>
+        <Version>Varies with device</Version>
+    </apps>
+    <apps>
+        <Name>Decked Builder</Name>
+        <Description>Decked Builder is the premium deck building app for Magic the Gathering (MTG) -- providing a sleek user
+            interface to research decks, find cards, and then build, price and finally buy the deck that you want.</Description>
+        <Downloads>10,000 - 50,000</Downloads>
+        <Video>https://www.youtube.com/embed/JtGqgFGmzzI</Video>
+        <Image>deckedBuilder.jpg</Image>
+        <Ratings>4.5/5</Ratings>
+        <Require>2.2 and up</Require>
+        <Version>2.4.3</Version>
+    </apps>
+</Catalog>
+

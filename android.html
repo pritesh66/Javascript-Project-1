@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8' />
+    <title>Android App Selector</title>
+
+
+    <link rel="stylesheet" type="text/css" href="myStyle.css">
+
+    <script src="browserDetect.js"></script>
+
+</head>
+
+<script>
+    var width = "300",
+            temp= parseInt(width),
+            time=50,
+            MySize,
+            position = "5",
+            currentLeft=900,
+            myVar;
+
+
+    var androidApps = ["Category"];
+
+    var level = [],createResultDiv, count, done,check, top, opacity,createDivFirst, copy, createDiv, finalDiv;
+    var http = new XMLHttpRequest(); 	// We create the HTTP Object
+    var isWorking = false;
+    var name,download,ratings,image, version, require, description, video,myTimeout, height, opacityForApp;
+
+    //Main Select array
+    androidApps["Category"] = ["","Communication", "Games", "Music"];
+
+    //last element ina all arrays are added according to heirarchical level of select element
+
+    androidApps["Communication"] = ["","Social", "Texting", "Video",1];
+    androidApps["Games"] = ["","Action", "Arcade", "Cards",1];
+    androidApps["Music"] = ["","Music Lovers", "Radio", "Ringtones",1];
+
+    //Communication
+    androidApps["Social"] = ["","Facebook", "Instagram", "Linkedin", "Snapchat",2];
+    androidApps["Texting"] = ["","BBM", "Hike", "Viber", "WhatsApp",2];
+    androidApps["Video"] = ["","Hangouts", "Line", "Skype",2];
+
+    //Games
+    androidApps["Action"] = ["", "Space Action", "Zombies",2];
+    androidApps["Arcade"] = ["","Cooking Games", "Fighting Games", "Retro",2];
+    androidApps["Cards"] = ["","Free", "Paid",2];
+
+    //Music
+    androidApps["Music Lovers"] = ["","Beats", "Saavn", "Spotify",2];
+    androidApps["Radio"] = ["","iHeartRadio", "Pandora", "TuneIn",2];
+    androidApps["Ringtones"] = ["","Ringdroid", "Zedge",2];
+
+    //Action Category
+
+    androidApps["Space Action"] = ["","Jetboom", "Space Chicks", "Space Defender",3];
+    androidApps["Zombies"] = ["","Walking Dead", "Zombie Fire",3];
+
+    //Arcade Category
+    androidApps["Cooking Games"] = ["","Cooking Fever", "Cooking Master", "Fruit Ninja",3];
+    androidApps["Fighting Games"] = ["","Kung Fu Warrior", "Mortal Kombat X", "WWE Immortals",3];
+    androidApps["Retro"] = ["","Break the Bricks","Angry Birds", 3];
+
+    //Cards Category
+    androidApps["Free"] = ["","Solitaire","FreeCell","Bingo Pop",3];
+    androidApps["Paid"] = ["","Decked Builder","Skip Bo",3];
+
+
+
+    function onLoad() {
+
+
+        /*-----------------------------------------------------------------
+         Checks browser compatibility and create the first select
+         -----------------------------------------------------------------*/
+
+        if (BrowserDetect.browser != "Safari") {
+
+
+            //Create main Select
+
+            createDivFirst= document.createElement("div");
+            createDivFirst.setAttribute("class","mainDiv");
+            createDivFirst.style.opacity = '0';
+            document.body.appendChild(createDivFirst);
+            opacity = 0;
+            fadeIn();
+
+            //myStopFunction();
+
+
+
+            var label = document.createElement("label");
+            label.setAttribute("class","child");
+            var t = document.createTextNode("Select Category ");
+            label.appendChild(t);
+            createDivFirst.appendChild(label);
+            var newLine = document.createElement("br");
+            createDivFirst.appendChild(newLine);
+            newLine = document.createElement("br");
+            createDivFirst.appendChild(newLine);
+
+            var createSelect = document.createElement("select");
+
+
+            for (var i = 0; i < androidApps["Category"].length; i++) {
+
+                var optionValue = document.createElement("option");
+                optionValue.setAttribute("value", androidApps["Category"][i]);
+                t = document.createTextNode(androidApps["Category"][i]);
+                optionValue.appendChild(t);
+                createSelect.appendChild(optionValue);
+
+            }
+
+            createDivFirst.appendChild(createSelect);
+
+            createSelect.onchange=function(){
+
+                allClear();
+
+                localStorage.setItem("category1",this.value);
+                createChildSelect(createSelect);
+            }
+
+        }
+        else {
+
+            // Redirects page to download new compatible browser
+
+            document.write("You Browser does not support this content. You will be redirected to download a new browser");
+            setTimeout(function () {
+                window.location.replace("https://www.google.com/chrome/browser/desktop/");
+            }, 3000);
+        }
+    }
+
+
+
+    /*-----------------------------------------------------------------
+     Create sub category select options dynamically
+     -----------------------------------------------------------------*/
+
+    function createChildSelect(value){
+
+        var childOption = value.options[value.selectedIndex].value;
+        if(androidApps[childOption] != undefined) {
+            console.log(childOption);
+            while (value.parentNode.nextSibling) {
+                console.log("delete");
+                document.body.removeChild(value.parentNode.nextSibling);
+            }
+
+            //create div
+
+
+            createDiv = document.createElement("div");
+            createDiv.setAttribute("class","childDiv");
+            createDiv.style.opacity = '0';
+            document.body.appendChild(createDiv);
+            opacity = 0;
+            fadeInChild();
+
+
+
+            //append label
+
+            var label = document.createElement("label");
+            label.setAttribute("class","child");
+            t = document.createTextNode("Select " + childOption + " category");
+            label.appendChild(t);
+            createDiv.appendChild(label);
+
+            //new line
+
+            newLine = document.createElement("br");
+            createDiv.appendChild(newLine);
+            newLine = document.createElement("br");
+            createDiv.appendChild(newLine);
+
+            //create new select
+
+            var createSelect = document.createElement("select");
+            createSelect.setAttribute("id","select");
+
+            for (var i = 0; i < androidApps[childOption].length - 1; i++) {
+                var optionValue = document.createElement("option");
+                optionValue.setAttribute("value", androidApps[childOption][i]);
+                t = document.createTextNode(androidApps[childOption][i]);
+                optionValue.appendChild(t);
+                createSelect.appendChild(optionValue);
+            }
+
+            createDiv.appendChild(createSelect);
+
+            createSelect.onchange = function () {
+                if(androidApps[this.value] != undefined) {
+                    allClear();
+                    count = androidApps[this.value].length - 1; //index for the last element in an array
+                    done = androidApps[this.value][count];
+                    var conv = done.toString();
+                    conv = "category" + conv;
+                    localStorage.setItem(conv, this.value);
+                    createChildSelect(createSelect);
+                    done++;
+                }
+                else{
+
+                    allClear();
+
+                    conv = done.toString();
+                    conv = "category" + conv;
+                    localStorage.setItem(conv, this.value);
+                    createChildSelect(createSelect);
+                }
+
+            }
+        }
+        else {
+            done++;
+
+            for (i = done ; i<=localStorage.length ; i++) {
+               localStorage.removeItem("category" +i);
+
+            }
+            done--;
+
+
+            createResultDiv = document.createElement("div");
+            createResultDiv.setAttribute("id","result");
+            createResultDiv.style.opacity ='0';
+            createResultDiv.setAttribute("class","result");
+            document.body.appendChild(createResultDiv);
+            opacity = 0;
+            fadeInResult();
+
+            var count = 0;
+            var display = [];
+            for ( i in window.localStorage) {
+                if(localStorage.hasOwnProperty(i)) {
+                    var val = localStorage.getItem(i);
+                    check = val;
+                    display[count] = val;
+                    count++;
+                }
+                }
+
+
+            //displays all the selected categories of app
+
+           if(display.length == 4) {
+               var t = document.createTextNode("You have selected an android app " + display[3] + "of Category "+display[0]+ "which belong to sub category " +display[1]+" and type "+display[2] );
+               createResultDiv.appendChild(t);
+               var newLine = document.createElement("br");
+               createResultDiv.appendChild(newLine);
+           }
+            else{
+               t = document.createTextNode("You have selected an android app " + display[2] + " of Category "+display[0]+ " which belong to sub category " +display[1]);
+               createResultDiv.appendChild(t);
+               newLine = document.createElement("br");
+               createResultDiv.appendChild(newLine);
+           }
+
+            ajaxCall();
+
+
+        }
+    }
+
+
+
+
+
+    /*--------------------------------------------------------------------
+     Function to clear and update for option from last select
+     -----------------------------------------------------------------*/
+
+
+    function allClear(){
+
+        var myNode = document.getElementById("appInfo");
+        if(myNode) {
+            document.body.removeChild(myNode);
+            opacityForApp = 1;
+            fadeOut();
+        }
+
+        myNode = document.getElementById("result");
+        if(myNode) {
+            document.body.removeChild(myNode);
+        }
+
+        myNode = document.getElementById("video");
+        if(myNode) {
+            document.body.removeChild(myNode);
+        }
+
+    }
+
+
+
+    /*--------------------------------------------------------------------
+        Function to parse xml file with ajax call
+     -----------------------------------------------------------------*/
+
+    function ajaxCall(){
+
+
+        if (!isWorking && http){
+            http.open("GET","http://priteshbora.com/project_1/androidApps.xml",true);
+            http.onreadystatechange = handleHttpResponse;
+            isWorking = true;
+            http.send(null);
+        }
+
+
+    }
+
+
+    function handleHttpResponse() {
+
+
+        //only when response is ready
+        if (http.readyState === 4) {
+
+            // only deal with valid responses
+            if (http.status === 200) {
+
+                //use XML DOM to unpack the data
+                var xmlDocumnet = http.responseXML;
+
+
+                var x = xmlDocumnet.getElementsByTagName("apps");
+
+
+                for (var i = 0; i < x.length; i++) {
+                    name = x[i].getElementsByTagName("Name")[0].firstChild.nodeValue;
+
+                    if (name == check) {
+                        console.log(name);
+                        download = x[i].getElementsByTagName("Downloads")[0].firstChild.nodeValue;
+
+                        ratings = x[i].getElementsByTagName("Ratings")[0].firstChild.nodeValue;
+                        version = x[i].getElementsByTagName("Version")[0].firstChild.nodeValue;
+                        image = x[i].getElementsByTagName("Image")[0].firstChild.nodeValue;
+                        video = x[i].getElementsByTagName("Video")[0].firstChild.nodeValue;
+                        require = x[i].getElementsByTagName("Require")[0].firstChild.nodeValue;
+                        description = x[i].getElementsByTagName("Description")[0].firstChild.nodeValue;
+                        break;
+                    }
+
+                }
+                var videoDiv = document.createElement("iframe");
+                videoDiv.setAttribute("id", "video");
+                document.body.appendChild(videoDiv);
+                videoDiv.setAttribute("src", video + "?rel=0&autoplay=0");
+
+
+                //created a div to display app info
+
+                finalDiv = document.createElement("div");
+                finalDiv.setAttribute("id", "appInfo");
+                finalDiv.style.height = '0px';
+                document.body.appendChild(finalDiv);
+                height = 0;
+                heightIncrease();
+                var img = document.createElement("img");
+                img.setAttribute("id", "image");
+                img.setAttribute("src", "http://priteshbora.com/project_1/Images/" + image);
+                img.setAttribute("height", "80");
+                img.setAttribute("width", "80");
+                finalDiv.appendChild(img);
+                newLine = document.createElement("br");
+                finalDiv.appendChild(newLine);
+                newLine = document.createElement("br");
+                finalDiv.appendChild(newLine);
+
+                var bold = document.createElement("b");
+                var t = document.createTextNode("Name: ");
+                bold.appendChild(t);
+                finalDiv.appendChild(bold);
+                t = document.createTextNode(name);
+                finalDiv.appendChild(t);
+                var newLine = document.createElement("br");
+                finalDiv.appendChild(newLine);
+
+                bold = document.createElement("b");
+                t = document.createTextNode("Version: ");
+                bold.appendChild(t);
+                finalDiv.appendChild(bold);
+                t = document.createTextNode(version);
+                finalDiv.appendChild(t);
+                newLine = document.createElement("br");
+                finalDiv.appendChild(newLine);
+
+                bold = document.createElement("b");
+                t = document.createTextNode("Require: ");
+                bold.appendChild(t);
+                finalDiv.appendChild(bold);
+                t = document.createTextNode(require);
+                finalDiv.appendChild(t);
+                newLine = document.createElement("br");
+                finalDiv.appendChild(newLine);
+
+                bold = document.createElement("b");
+                t = document.createTextNode("Description: ");
+                bold.appendChild(t);
+                finalDiv.appendChild(bold);
+                t = document.createTextNode(description);
+                finalDiv.appendChild(t);
+                newLine = document.createElement("br");
+                finalDiv.appendChild(newLine);
+
+                bold = document.createElement("b");
+                t = document.createTextNode("Downloads: ");
+                bold.appendChild(t);
+                finalDiv.appendChild(bold);
+                t = document.createTextNode(download);
+                finalDiv.appendChild(t);
+                newLine = document.createElement("br");
+                finalDiv.appendChild(newLine);
+
+                bold = document.createElement("b");
+                t = document.createTextNode("Ratings: ");
+                bold.appendChild(t);
+                finalDiv.appendChild(bold);
+                t = document.createTextNode(ratings);
+                finalDiv.appendChild(t);
+                newLine = document.createElement("br");
+                finalDiv.appendChild(newLine);
+
+
+                isWorking = false;
+
+
+            }
+
+        }
+    }
+
+
+
+
+    /*--------------------------------------------------------------------
+      Function to validate the form fields
+     -----------------------------------------------------------------*/
+
+    function validateField() {
+
+        var errAll="";
+        var fname = document.getElementById("firstname");
+        var lname = document.getElementById("lastname");
+        var phone = document.getElementById("mobile");
+        var eid = document.getElementById("email");
+        var err=["","","",""];
+
+
+        // Validation regex for Firstname
+
+        if(!fname.value.match(/[A-Za-z]+\b/)){
+            err[0] = "Invalid Firstname";
+        }
+
+        // Validation regex for lastname
+
+        if(!lname.value.match(/^([a-zA-Z '-]+)$/)){
+            err[1] = "Invalid Lastname";
+        }
+
+        // Validation regex for mobile
+
+        if(!phone.value.match(/^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$/)) {
+            err[2] = "Invalid Phone Number";
+
+        }
+
+        // Validation regex for emailid
+
+        if(!eid.value.match(/^([\w\-\.]+)@((\[([0-9]{1,3}\.){3}[0-9]{1,3}\])|(([\w\-]+\.)+)([a-zA-Z]{2,4}))$/)){
+            err[3] = "Invalid Email Id";
+
+        }
+
+
+        //storing the values in cookies
+
+        document.cookie = "firstname=" + fname.value ;
+        document.cookie = "lastname=" + lname.value ;
+        document.cookie = "email=" + eid.value ;
+        document.cookie = "phone=" + phone.value ;
+
+        for(var i=0;i<err.length;i++) {
+            if (err[i] != ""){
+                errAll = errAll + err[i] + "\n";
+                console.log(errAll);
+            }
+        }
+
+        if(errAll!="")
+        alert(errAll);
+        else
+        {
+            var cookieValueFname = document.cookie.replace(/(?:(?:^|.*;\s*)firstname\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+            var cookieValueLname = document.cookie.replace(/(?:(?:^|.*;\s*)lastname\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+            var cookieValuePhone = document.cookie.replace(/(?:(?:^|.*;\s*)phone\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+            var cookieValueEmail = document.cookie.replace(/(?:(?:^|.*;\s*)email\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+            var done = confirm("Are you sure you want to submit the following\nFirstname: "+cookieValueFname+"\nLastname: "+cookieValueLname+ "\nEmail id: "+cookieValueEmail+"\nPhone: "+cookieValuePhone);
+            if(done == true){
+                alert("Submitted Successfully");
+            }
+        }
+
+    }
+
+    /*--------------------------------------------------------------------
+     Functions for fade in effect
+     -----------------------------------------------------------------*/
+    function fadeIn() {
+
+        if (opacity <= 1) {
+            opacity = opacity + 0.1;
+            copy = opacity.toString();
+            createDivFirst.style.opacity = copy;
+            setTimeout('fadeIn()', 100);
+        }
+    }
+
+    function fadeInChild() {
+
+        if (opacity <= 1) {
+            opacity = opacity + 0.1;
+            copy = opacity.toString();
+            createDiv.style.opacity = copy;
+            setTimeout('fadeInChild()', 100);
+        }
+    }
+
+    function fadeInResult() {
+
+        if (opacity <= 1) {
+            opacity = opacity + 0.1;
+            copy = opacity.toString();
+            createResultDiv.style.opacity = copy;
+            setTimeout('fadeInResult()', 100);
+        }
+    }
+
+   function heightIncrease(){
+
+       if(height<=300){
+           height =height + 3;
+           copy = height.toString();
+           finalDiv.style.height = copy + 'px';
+           setTimeout('heightIncrease()', 30);
+       }
+   }
+
+    /*--------------------------------------------------------------------
+     Function for fade-out effect
+     -----------------------------------------------------------------*/
+
+    function fadeOut() {
+
+        if (opacityForApp >= 0) {
+            opacityForApp = opacityForApp - 0.1;
+            copy = opacity.toString();
+            finalDiv.style.opacity = copy;
+            setTimeout('fadeOut()', 100);
+        }
+    }
+
+</script>
+
+<body onload="onLoad();">
+<div id = "header">
+    <h2>Android App Info</h2>
+</div>
+    <form class="userinfoform" name="User_info" action="" onsubmit= "return validateField();"  >
+
+
+        <div id="form">
+            <h3>Contact Us</h3>
+            <ul id="list">
+                <li>
+                    <label>First Name:</label>
+                    <input type="text" id="firstname" required /> <br>
+                </li>
+                <li>
+                    <label>Last Name:</label>
+                    <input type="text" id="lastname" required /><br>
+                </li>
+                <li>
+                    <label>Email id:</label>
+                    <input type="text" id="email"  required /><br/>
+                </li>
+                <li>
+                    <label>Mobile Number:</label>
+                    <input type="text" id="mobile" required /><br>
+                </li>
+                <li>
+                    <button id="submit" type="submit" >Submit</button>
+                </li>
+                </ul>
+        </div>
+
+</form>
+    <div id="footer">Copyright © Pritesh Bora 2015</div>
+
+
+</body>
+</html>
