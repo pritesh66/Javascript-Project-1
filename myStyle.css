@@ -1,7 +1,8 @@
 
+
 body{
 
-    background: url("http://www.interiorplace.com/product_images/w/822/94201BL__26238.jpg") no-repeat center center fixed;
+    background: url("body.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -9,70 +10,115 @@ body{
 
 }
 
-#header{
+.header{
 
     color: white;
-    background: url("http://orig06.deviantart.net/1b7e/f/2012/112/5/9/grey_wood_by_del_korey-d4x7p01.jpg");
-    padding-top: 20px;
+    background: url("header.png");
+    padding-top: 80px;
+    background-size: cover ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    height: 250px;
+    width: 100%;
+    display: block;
+    animation-name: bounce;
+    animation-duration: 2s;
+
 
 }
 
+
+
+
+
 h2{
 
-    text-align: center;
+    padding-left: 11%;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    margin: 0;
+    height: 27%;
+    color: #59E817;
+    font-size: 60px;
+    display: block;
+    animation-name: lightSpeedIn;
+    animation-duration: 2s;
+
+}
+
+h5{
+    padding-left: 4%;
     font-family: Arnoldboecklin, fantasy;
     margin: 0;
-    height: 60px;
+    height: 20%;
+    font-size: 25px;
+    padding-top: 30px;
+    color: #66FF66;
+    display: block;
+
+}
+
+h6{
+    padding-left: 20%;
+    font-family: Arnoldboecklin, fantasy;
+    margin: 0;
+    font-size: 25px;
+    color: #66FF66;
+    display: block;
 
 }
 
 
 .mainDiv{
 
-    margin-top: 3%;
-    left: 4%;
+    margin-top: 57px;
+    left: 2%;
     position: relative;
     border: solid 2px black;
     height : 70px;
     width: 300px;
     padding-left :50px;
-    background: url("select.jpg");
-    box-shadow: 10px 10px 5px #888888;
+    background-color: #484848 ;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+    padding-bottom: 10px;
+    display:block;
+    color: white;
 
 }
+
+.mainDiv:hover{
+    background-color: #505050;
+}
+
+
 
 #video{
-    top : 125px;
-    left: 500px;
+
+    top : 395px;
+    left: 35%;
     position: absolute;
-    float: right;
-    width : 320px;
+    width : 390px;
     height: 300px;
-    -webkit-transition: width 2s, height 4s, left 2s; /* For Safari 3.1 to 6.0 */
-    -moz-transition: width 2s, height 4s, left 2s; /* For Mozilla 3.1 to 6.0 */
-    transition: width 2s, height 4s, left 2s;
-    -moz-
+    animation-name: shake;
+    animation-duration: 3s;
 
 }
 
-#video:hover{
-    width: 370px;
-    height: 370px;
-    left: 470px;
-}
+
 
 #appInfo{
 
-    top : 123px;
-    left: 900px;
+    top : 395px;
+    left: 69%;
     position: absolute;
-    float: right;
     border: solid 2px black;
-    width : 300px;
-    height: 300px;
-    box-shadow: 10px 10px 5px #888888;
-    background-color: khaki;
+    width : 340px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+    background: url("app.png") no-repeat;
     padding: 10px 5px 10px 40px;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    color: white;
 
 }
 
@@ -85,21 +131,30 @@ h2{
 
 }
 
+
 .childDiv{
 
+    display:block;
     position: relative;
-    top:3%;
-    left:4%;
+    left:2%;
     border-bottom: solid 2px black;
     border-right: solid 2px black;
     border-left: solid 2px black;
     width : 300px;
     height : 70px;
     padding-left :50px;
-    background: url("select.jpg");
-    box-shadow: 10px 10px 5px #888888;
+    padding-bottom: 10px;
+    background-color: #484848;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+    color: white;
+
 
 }
+
+.childDiv:hover{
+    background-color: #505050;
+}
+
 
 #select{
 
@@ -109,22 +164,26 @@ h2{
 }
 
 
-.result{
+.result {
 
-    top:4%;
-    left:4%;
-    width : 340px;
-    height : 70px;
-    padding-left :10px;
-    position:relative;
-    padding-top : 10px;
-    padding-bottom : 10px;
+    top: 4%;
+    left: 2%;
+    width: 340px;
+    height: 70px;
+    padding-left: 10px;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-bottom: solid 2px black;
     border-right: solid 2px black;
     border-left: solid 2px black;
-    background: url("select.jpg");
-    box-shadow: 10px 10px 5px #888888;
+    background-color: #484848;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+    color: white;
+}
 
+.result:hover{
+    background-color: #505050;
 }
 
 #form li{
@@ -164,11 +223,13 @@ h2{
 
     padding-top: 10px;
     position: absolute ;
-    top:560px ;
-    border: solid white 1px;
+    top:863px ;
     width: 100%;
     margin: auto;
-    background : url("http://www.androidguys.com/wp-content/uploads/2015/01/4757.jpg");
+    background : url("form.jpg");
+    background-size:cover ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
     color: white;
 
 }
@@ -176,13 +237,14 @@ h2{
 #footer {
 
     position:absolute;
-    border-top: solid white 2px;
     padding-top: 10px;
     bottom:0;
     width:100%;
     height:30px;   /* Height of the footer */
-    top: 893px;
-    text-align: center;
+    top: 1193px;
+
+   font-weight: bold;
+
 
 }
 
@@ -191,7 +253,7 @@ h2{
     background-color: #68b12f;
     height: 50px;
     width: 100px;
-    margin-left: 90px;
+    margin-left: 17%;
     background: -webkit-gradient(linear, left top, left bottom, from(#68b12f), to(#50911e));
     background: -webkit-linear-gradient(top, #68b12f, #50911e);
     background: -moz-linear-gradient(top, #68b12f, #50911e);
@@ -219,18 +281,96 @@ input:focus{
 
 #list{
 
-    margin-left: 445px;
+    margin-left: 36%;
 
 }
 
 h3{
 
-    margin-left: 580px;
+    margin-left: 47%;
 
 }
 
 #image{
 
-    box-shadow: 10px 10px 5px #888888;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
 
 }
+
+/*
+
+Animate.css - http://daneden.me/animate
+
+  */
+
+@keyframes bounce {
+  from, 20%, 53%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+
+  40%, 43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    -webkit-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    -webkit-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0,-4px,0);
+    transform: translate3d(0,-4px,0);
+  }
+}
+
+@-webkit-keyframes lightSpeedIn {
+    from {
+        -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+        transform: translate3d(100%, 0, 0) skewX(-30deg);
+        opacity: 0;
+    }
+
+    60% {
+        -webkit-transform: skewX(20deg);
+        transform: skewX(20deg);
+        opacity: 1;
+    }
+
+    80% {
+        -webkit-transform: skewX(-5deg);
+        transform: skewX(-5deg);
+        opacity: 1;
+    }
+
+    to {
+        -webkit-transform: none;
+        transform: none;
+        opacity: 1;
+    }
+}
+
+@keyframes shake {
+    from, to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
+

@@ -79,6 +79,12 @@ var BrowserDetect = {
 			identity: "Explorer",
 			versionSearch: "MSIE"
 		},
+        {
+            string: navigator.userAgent,
+            subString: "MSIE7",
+            identity: "Explorer7",
+            versionSearch: "MSIE7"
+        },
 		{
 			string: navigator.userAgent,
 			subString: "Gecko",

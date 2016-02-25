@@ -10,16 +10,47 @@
     <script src="browserDetect.js"></script>
 
 </head>
+<body onload="onLoad();">
+<div class = "header">
+    <h2>Android App World</h2>
+    <h5>A place where you'll find all the information of an android application</h5>
+    <h6>downloads | ratings | reviews</h6>
 
+</div>
+<form class="userinfoform" name="User_info" action="" onsubmit= "return validateField();"  >
+
+
+    <div id="form">
+        <h3>Subscribe Us</h3>
+        <ul id="list">
+            <li>
+                <label>First Name:</label>
+                <input type="text" id="firstname" required /> <br>
+            </li>
+            <li>
+                <label>Last Name:</label>
+                <input type="text" id="lastname" required /><br>
+            </li>
+            <li>
+                <label>Email id:</label>
+                <input type="text" id="email"  required /><br/>
+            </li>
+            <li>
+                <label>Mobile Number:</label>
+                <input type="text" id="mobile" required /><br>
+            </li>
+            <li>
+                <button id="submit" type="submit" >Submit</button>
+            </li>
+        </ul>
+    </div>
+
+</form>
+<div id="footer">Copyright © Pritesh Bora 2015 <br><a href="reference.html">References</a></div>
+
+
+</body>
 <script>
-    var width = "300",
-            temp= parseInt(width),
-            time=50,
-            MySize,
-            position = "5",
-            currentLeft=900,
-            myVar;
-
 
     var androidApps = ["Category"];
 
@@ -68,28 +99,37 @@
 
 
 
+    /*---------------------------------------
+     function executed on page load
+    ----------------------------------------*/
+
     function onLoad() {
 
+        var version = parseInt(BrowserDetect.version);
 
-        /*-----------------------------------------------------------------
-         Checks browser compatibility and create the first select
-         -----------------------------------------------------------------*/
+         //Checks browser compatibility and create the first select
 
-        if (BrowserDetect.browser != "Safari") {
+        if ((BrowserDetect.browser == "Safari") || ( BrowserDetect.browser == "Explorer" &&  version < 9 )) {
 
+            // Redirects page to download new compatible browser
 
-            //Create main Select
+            alert("You Browser does not support this content. You are redirected to download a new browser");
+            window.location.replace("https://www.google.com/chrome/browser/desktop/", "_blank");
+
+        }
+        else {
+
+            //Create first Select div
 
             createDivFirst= document.createElement("div");
             createDivFirst.setAttribute("class","mainDiv");
             createDivFirst.style.opacity = '0';
             document.body.appendChild(createDivFirst);
             opacity = 0;
+
+           //function call for dhtml fade in effect
+
             fadeIn();
-
-            //myStopFunction();
-
-
 
             var label = document.createElement("label");
             label.setAttribute("class","child");
@@ -101,9 +141,10 @@
             newLine = document.createElement("br");
             createDivFirst.appendChild(newLine);
 
+
+            //create select and options
+
             var createSelect = document.createElement("select");
-
-
             for (var i = 0; i < androidApps["Category"].length; i++) {
 
                 var optionValue = document.createElement("option");
@@ -124,20 +165,11 @@
                 createChildSelect(createSelect);
             }
 
-        }
-        else {
 
-            // Redirects page to download new compatible browser
-
-            document.write("You Browser does not support this content. You will be redirected to download a new browser");
-            setTimeout(function () {
-                window.location.replace("https://www.google.com/chrome/browser/desktop/");
-            }, 3000);
         }
     }
 
-
-
+    
     /*-----------------------------------------------------------------
      Create sub category select options dynamically
      -----------------------------------------------------------------*/
@@ -161,7 +193,6 @@
             document.body.appendChild(createDiv);
             opacity = 0;
             fadeInChild();
-
 
 
             //append label
@@ -220,12 +251,15 @@
         else {
             done++;
 
+            //remove or replace items in local storage
+
             for (i = done ; i<=localStorage.length ; i++) {
                localStorage.removeItem("category" +i);
 
             }
             done--;
 
+            //create the div for displaying all the levels of selected category
 
             createResultDiv = document.createElement("div");
             createResultDiv.setAttribute("id","result");
@@ -269,9 +303,6 @@
     }
 
 
-
-
-
     /*--------------------------------------------------------------------
      Function to clear and update for option from last select
      -----------------------------------------------------------------*/
@@ -299,9 +330,8 @@
     }
 
 
-
     /*--------------------------------------------------------------------
-        Function to parse xml file with ajax call
+        Function for ajax call
      -----------------------------------------------------------------*/
 
     function ajaxCall(){
@@ -317,6 +347,12 @@
 
     }
 
+
+
+
+    /*--------------------------------------------------------------------
+     Function to parse xml file on ajax call
+     -----------------------------------------------------------------*/
 
     function handleHttpResponse() {
 
@@ -357,7 +393,7 @@
                 videoDiv.setAttribute("src", video + "?rel=0&autoplay=0");
 
 
-                //created a div to display app info
+                //create a div to display app info
 
                 finalDiv = document.createElement("div");
                 finalDiv.setAttribute("id", "appInfo");
@@ -440,8 +476,6 @@
     }
 
 
-
-
     /*--------------------------------------------------------------------
       Function to validate the form fields
      -----------------------------------------------------------------*/
@@ -475,13 +509,12 @@
 
         }
 
-        // Validation regex for emailid
+        // Validation regex for email-id
 
         if(!eid.value.match(/^([\w\-\.]+)@((\[([0-9]{1,3}\.){3}[0-9]{1,3}\])|(([\w\-]+\.)+)([a-zA-Z]{2,4}))$/)){
             err[3] = "Invalid Email Id";
 
         }
-
 
         //storing the values in cookies
 
@@ -497,18 +530,19 @@
             }
         }
 
-        if(errAll!="")
-        alert(errAll);
+        //display all errors
+
+        if(errAll!="") {
+            alert(errAll);
+        return false;
+        }
         else
         {
+            //retrieve values stored in cookies
+
             var cookieValueFname = document.cookie.replace(/(?:(?:^|.*;\s*)firstname\s*\=\s*([^;]*).*$)|^.*$/, "$1");
             var cookieValueLname = document.cookie.replace(/(?:(?:^|.*;\s*)lastname\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-            var cookieValuePhone = document.cookie.replace(/(?:(?:^|.*;\s*)phone\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-            var cookieValueEmail = document.cookie.replace(/(?:(?:^|.*;\s*)email\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-            var done = confirm("Are you sure you want to submit the following\nFirstname: "+cookieValueFname+"\nLastname: "+cookieValueLname+ "\nEmail id: "+cookieValueEmail+"\nPhone: "+cookieValuePhone);
-            if(done == true){
-                alert("Submitted Successfully");
-            }
+            alert("Hi "+cookieValueFname+" "+cookieValueLname+",\nYour information is submitted Successfully");
         }
 
     }
@@ -548,8 +582,8 @@
 
    function heightIncrease(){
 
-       if(height<=300){
-           height =height + 3;
+       if(height<=390){
+           height =height + 5;
            copy = height.toString();
            finalDiv.style.height = copy + 'px';
            setTimeout('heightIncrease()', 30);
@@ -571,42 +605,4 @@
     }
 
 </script>
-
-<body onload="onLoad();">
-<div id = "header">
-    <h2>Android App Info</h2>
-</div>
-    <form class="userinfoform" name="User_info" action="" onsubmit= "return validateField();"  >
-
-
-        <div id="form">
-            <h3>Contact Us</h3>
-            <ul id="list">
-                <li>
-                    <label>First Name:</label>
-                    <input type="text" id="firstname" required /> <br>
-                </li>
-                <li>
-                    <label>Last Name:</label>
-                    <input type="text" id="lastname" required /><br>
-                </li>
-                <li>
-                    <label>Email id:</label>
-                    <input type="text" id="email"  required /><br/>
-                </li>
-                <li>
-                    <label>Mobile Number:</label>
-                    <input type="text" id="mobile" required /><br>
-                </li>
-                <li>
-                    <button id="submit" type="submit" >Submit</button>
-                </li>
-                </ul>
-        </div>
-
-</form>
-    <div id="footer">Copyright © Pritesh Bora 2015</div>
-
-
-</body>
 </html>
